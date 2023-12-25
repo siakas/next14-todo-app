@@ -1,5 +1,6 @@
 'use client' // NextUI の Table コンポーネントは Client Component でないとエラーが出る
 
+import { DeleteTodoButton } from '@/components/DeleteTodoButton'
 import { formatDate } from '@/utils/formatDate'
 import {
   Button,
@@ -69,7 +70,15 @@ export const TodoListTable = ({ className, todos }: Props) => {
                     color="danger"
                     key="delete"
                   >
-                    削除
+                    {/* <form>
+                      <button
+                        className="block w-full text-left"
+                        formAction={deleteTodo}
+                      >
+                        削除
+                      </button>
+                    </form> */}
+                    <DeleteTodoButton id={todo.id} />
                   </DropdownItem>
                 </DropdownMenu>
               </Dropdown>

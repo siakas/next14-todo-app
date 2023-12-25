@@ -12,3 +12,12 @@ export const addTodo = async (data: FormData) => {
   })
   revalidatePath('/')
 }
+
+export const deleteTodo = async (id: string) => {
+  await prisma.todo.delete({
+    where: {
+      id,
+    },
+  })
+  revalidatePath('/')
+}
