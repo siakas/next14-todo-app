@@ -1,3 +1,4 @@
+import { Providers } from '@/app/provider'
 import '@/styles/globals.css'
 import { inter } from '@/utils/fonts'
 import type { Metadata } from 'next'
@@ -13,9 +14,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ja">
+    <html className="light" lang="ja">
       <body className={inter.className}>
-        <div className="m-auto max-w-4xl p-8">{children}</div>
+        <div className="m-auto max-w-5xl p-8">
+          <Providers>{children}</Providers>
+        </div>
       </body>
     </html>
   )
