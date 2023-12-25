@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html className="light" lang="ja">
       <body className={inter.className}>
-        <div className="m-auto max-w-5xl p-8">
+        <div className="m-auto max-w-5xl px-5 py-12">
           <Providers>{children}</Providers>
         </div>
       </body>

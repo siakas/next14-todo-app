@@ -19,6 +19,7 @@ import {
 import { Todo } from '@prisma/client'
 import { DotsHorizontalIcon } from '@radix-ui/react-icons'
 import clsx from 'clsx'
+import Link from 'next/link'
 
 type Props = {
   className?: string
@@ -41,7 +42,11 @@ export const TodoListTable = ({ className, todos }: Props) => {
             className={clsx(todo.isCompleted && 'bg-gray-200 text-gray-400')}
             key={todo.id}
           >
-            <TableCell>{todo.title}</TableCell>
+            <TableCell>
+              <Link className="hover:underline" href={`/${todo.id}`}>
+                {todo.title}
+              </Link>
+            </TableCell>
             <TableCell>
               {formatDate(todo.createdAt, 'YYYY/MM/DD HH:mm')}
             </TableCell>
@@ -63,7 +68,9 @@ export const TodoListTable = ({ className, todos }: Props) => {
                   </Button>
                 </DropdownTrigger>
                 <DropdownMenu>
-                  <DropdownItem key="view">詳細を見る</DropdownItem>
+                  <DropdownItem key="view">
+                    <Link href={`/${todo.id}`}>詳細を見る</Link>
+                  </DropdownItem>
                   <DropdownItem key="edit">編集</DropdownItem>
                   <DropdownItem
                     className="text-danger"
