@@ -54,7 +54,7 @@ export const TodoListTable = ({ className, todos }: Props) => {
               {formatDate(todo.updatedAt, 'YYYY/MM/DD HH:mm')}
             </TableCell>
             <TableCell>
-              <Checkbox isSelected={todo.isCompleted} />
+              <Checkbox defaultSelected={todo.isCompleted} />
             </TableCell>
             <TableCell>
               <Dropdown>
