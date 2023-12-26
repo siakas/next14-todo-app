@@ -69,9 +69,15 @@ export const TodoListTable = ({ className, todos }: Props) => {
                 </DropdownTrigger>
                 <DropdownMenu>
                   <DropdownItem key="view">
-                    <Link href={`/${todo.id}`}>詳細を見る</Link>
+                    <Link className="block" href={`/${todo.id}`}>
+                      詳細を見る
+                    </Link>
                   </DropdownItem>
-                  <DropdownItem key="edit">編集</DropdownItem>
+                  <DropdownItem key="edit">
+                    <Link className="block" href={`/${todo.id}/edit`}>
+                      編集
+                    </Link>
+                  </DropdownItem>
                   <DropdownItem
                     className="text-danger"
                     color="danger"
