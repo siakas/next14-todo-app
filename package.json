@@ -13,7 +13,8 @@
     "fix:eslint": "npm run lint:eslint -- --fix",
     "fix:prettier": "npm run lint:prettier -- --write",
     "prepare": "husky install",
-    "studio": "npx prisma studio"
+    "studio": "npx prisma studio",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@nextui-org/react": "^2.2.9",
